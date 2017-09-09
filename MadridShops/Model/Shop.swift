@@ -8,12 +8,17 @@
 
 import Foundation
 
-class Shop {
-    let name: String
-    let description: String
-    let latitude: Float
-    let longitude: Float
-    let image: String
-    let logo: String
-    let openingHours: String
+public class Shop {
+    let name:           String
+    let description:    String = ""
+    let latitude:       Float? = nil
+    let longitude:      Float? = nil
+    let image:          String = ""
+    let logo:           String = ""
+    let openingHours:   String = ""
+    let adress:         String = ""
+    
+    public init(name: String) {
+        self.name = name
+    }
 }
