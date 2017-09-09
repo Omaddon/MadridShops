@@ -13,6 +13,7 @@
 		8CBE9F451F63E8CC00F3A444 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CBE9F441F63E8CC00F3A444 /* Assets.xcassets */; };
 		8CBE9F481F63E8CC00F3A444 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBE9F461F63E8CC00F3A444 /* LaunchScreen.storyboard */; };
 		8CBE9F531F63E8CD00F3A444 /* MadridShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F521F63E8CD00F3A444 /* MadridShopsTests.swift */; };
+		8CBE9F621F63ECFD00F3A444 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F611F63ECFD00F3A444 /* Shop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		8CBE9F4E1F63E8CD00F3A444 /* MadridShopsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadridShopsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBE9F521F63E8CD00F3A444 /* MadridShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadridShopsTests.swift; sourceTree = "<group>"; };
 		8CBE9F541F63E8CD00F3A444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CBE9F611F63ECFD00F3A444 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				8CBE9F3D1F63E8CC00F3A444 /* AppDelegate.swift */,
-				8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */,
-				8CBE9F411F63E8CC00F3A444 /* Main.storyboard */,
-				8CBE9F441F63E8CC00F3A444 /* Assets.xcassets */,
-				8CBE9F461F63E8CC00F3A444 /* LaunchScreen.storyboard */,
+				8CBE9F601F63EAF700F3A444 /* Assets */,
+				8CBE9F5F1F63EACA00F3A444 /* Model */,
+				8CBE9F5E1F63EAC500F3A444 /* View */,
+				8CBE9F5D1F63EAB500F3A444 /* Controller */,
 				8CBE9F491F63E8CC00F3A444 /* Info.plist */,
 			);
 			path = MadridShops;
@@ -94,6 +96,39 @@
 				8CBE9F541F63E8CD00F3A444 /* Info.plist */,
 			);
 			path = MadridShopsTests;
+			sourceTree = "<group>";
+		};
+		8CBE9F5D1F63EAB500F3A444 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8CBE9F5E1F63EAC500F3A444 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CBE9F411F63E8CC00F3A444 /* Main.storyboard */,
+				8CBE9F461F63E8CC00F3A444 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8CBE9F5F1F63EACA00F3A444 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CBE9F611F63ECFD00F3A444 /* Shop.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CBE9F601F63EAF700F3A444 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8CBE9F441F63E8CC00F3A444 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CBE9F621F63ECFD00F3A444 /* Shop.swift in Sources */,
 				8CBE9F401F63E8CC00F3A444 /* ViewController.swift in Sources */,
 				8CBE9F3E1F63E8CC00F3A444 /* AppDelegate.swift in Sources */,
 			);
