@@ -11,6 +11,10 @@ import FillableLoaders
 
 class MainViewController: UIViewController {
 
+    var myLoader: WavesLoader?
+    
+    @IBOutlet weak var redRectangle: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,12 +34,57 @@ class MainViewController: UIViewController {
         starPath.fill()
         
         let myPath = starPath.cgPath
-        let myLoader = WavesLoader.showLoader(with: myPath)
-        self.view.addSubview(myLoader)
+        self.myLoader = WavesLoader.showLoader(with: myPath)
+        self.view.addSubview(self.myLoader!)
         
-//        let rect = CGRect(x: 10, y: 100, width: 200, height: 200)
-//        let v = UIView(frame: rect)
-//        v.backgroundColor = UIColor.blue
-//        self.view.addSubview(v)
+        let rect = CGRect(x: 10, y: 100, width: 200, height: 200)
+        let v = UIView(frame: rect)
+        v.backgroundColor = UIColor.blue
+        self.view.addSubview(v)
+        
+        // gesture TAP
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(animateView))
+        tapGesture.numberOfTouchesRequired = 1  // números de dedos requeridos para el tap
+        tapGesture.numberOfTapsRequired = 2     // número de golpes para el tap
+        self.view.addGestureRecognizer(tapGesture)
+        
+        // gesture SWIPE
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(restoreView))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+    }
+    
+    @objc func animateView() {
+        UIView.animate(withDuration: 2.0) {
+            if let v = self.myLoader {
+                let newFrame = CGRect(x: v.frame.origin.x,
+                                      y: v.frame.origin.y + 200,
+                                      width: v.frame.size.width,
+                                      height: v.frame.size.height)
+                v.frame = newFrame
+            }
+            
+            self.redRectangle.layer.cornerRadius = self.redRectangle.layer.cornerRadius + 10
+            self.redRectangle.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        }
+    }
+    
+    @objc func restoreView() {
+        UIView.animate(withDuration: 2.0, animations: {
+            if let v = self.myLoader {
+                let newFrame = CGRect(x: 0,
+                                      y: 0,
+                                      width: v.frame.size.width,
+                                      height: v.frame.size.height)
+                v.frame = newFrame
+            }
+        }) { (stop: Bool) in
+            
+            UIView.animate(withDuration: 2.0, animations: {
+                self.redRectangle.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+                self.redRectangle.layer.cornerRadius = 0
+            })
+        }
     }
 }
