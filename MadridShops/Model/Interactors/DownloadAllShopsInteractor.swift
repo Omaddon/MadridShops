@@ -8,6 +8,11 @@
 
 import Foundation
 
+// typealias errorClosure = ((Error) -> Void)?
+
 protocol DownloadAllShopsInteractor {
-    func execute()
+    
+    func execute(onSuccess: @escaping (Shops) -> Void,
+                 onError: errorClosure)
+    func execute(onSuccess: @escaping (Shops) -> Void)
 }

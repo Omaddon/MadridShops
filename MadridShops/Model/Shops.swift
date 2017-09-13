@@ -22,7 +22,8 @@ public class Shops: ShopsProtocol {
     }
     
     public func count() -> Int {
-        return shopsList?.count ?? 0
+        // shopsList?.count ?? 0
+        return (shopsList?.count)!
     }
     
     public func add(shop: Shop) {

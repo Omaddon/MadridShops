@@ -9,14 +9,14 @@
 import Foundation
 
 public class Shop {
-    let name:           String
-    let description:    String = ""
-    let latitude:       Float? = nil
-    let longitude:      Float? = nil
-    let image:          String = ""
-    let logo:           String = ""
-    let openingHours:   String = ""
-    let adress:         String = ""
+    var name:           String
+    var description:    String = ""
+    var latitude:       Float? = nil
+    var longitude:      Float? = nil
+    var image:          String = ""
+    var logo:           String = ""
+    var openingHours:   String = ""
+    var adress:         String = ""
     
     public init(name: String) {
         self.name = name

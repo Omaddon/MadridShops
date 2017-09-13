@@ -10,16 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var shops: Shops?
+    
+    @IBOutlet weak var shopsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorFakeImpl()
+        /*
+        downloadShopsInteractor.execute(onSuccess: { (shops: Shops) in
+            // OK
+        }) { (error: Error) in
+            // ERROR
+        }
+         */
+        
+        // O podemos escribirlo así
+        downloadShopsInteractor.execute { (shops: Shops) in
+            //print("Name: " + shops.get(index: 0).name)
+            self.shops = shops
+            
+            self.shopsCollectionView.delegate = self
+            self.shopsCollectionView.dataSource = self
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
