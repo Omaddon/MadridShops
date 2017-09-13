@@ -17,8 +17,12 @@ public protocol ShopsProtocol {
 public class Shops: ShopsProtocol {
    private var shopsList: [Shop]?
     
+    public init() {
+        self.shopsList = []
+    }
+    
     public func count() -> Int {
-        return (shopsList?.count)!
+        return shopsList?.count ?? 0
     }
     
     public func add(shop: Shop) {
