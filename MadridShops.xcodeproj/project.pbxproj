@@ -16,6 +16,7 @@
 		8C90D8F21F69726A009B4F60 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8F11F69726A009B4F60 /* ShopCell.swift */; };
 		8C90D8F41F697B2A009B4F60 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8C90D8F31F697B2A009B4F60 /* Podfile */; };
 		8C90D8F61F698978009B4F60 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8F51F698978009B4F60 /* MainViewController.swift */; };
+		8C90D8F81F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */; };
 		8CBE9F3E1F63E8CC00F3A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F3D1F63E8CC00F3A444 /* AppDelegate.swift */; };
 		8CBE9F401F63E8CC00F3A444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */; };
 		8CBE9F431F63E8CC00F3A444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBE9F411F63E8CC00F3A444 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		8C90D8F11F69726A009B4F60 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		8C90D8F31F697B2A009B4F60 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8C90D8F51F698978009B4F60 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorNSOp.swift; sourceTree = "<group>"; };
 		8CBE9F3A1F63E8CC00F3A444 /* MadridShops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadridShops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBE9F3D1F63E8CC00F3A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				8C90D8E81F695F6F009B4F60 /* Typealias.swift */,
 				8C90D8E41F6950C2009B4F60 /* DownloadAllShopsInteractor.swift */,
 				8C90D8EA1F695FCA009B4F60 /* DownloadAllShopsInteractorFakeImpl.swift */,
+				8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C90D8F81F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift in Sources */,
 				8CBE9F621F63ECFD00F3A444 /* Shop.swift in Sources */,
 				8C90D8F21F69726A009B4F60 /* ShopCell.swift in Sources */,
 				8CBE9F401F63E8CC00F3A444 /* ViewController.swift in Sources */,
