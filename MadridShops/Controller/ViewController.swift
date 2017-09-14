@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSOp()
+        // Elegimos el interactor que queramos usar (el fake, NSOp, NSURLSession, etc)
+        let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSession()
         /*
         downloadShopsInteractor.execute(onSuccess: { (shops: Shops) in
             // OK

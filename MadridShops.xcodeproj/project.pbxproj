@@ -17,6 +17,8 @@
 		8C90D8F41F697B2A009B4F60 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8C90D8F31F697B2A009B4F60 /* Podfile */; };
 		8C90D8F61F698978009B4F60 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8F51F698978009B4F60 /* MainViewController.swift */; };
 		8C90D8F81F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */; };
+		8C90D8FB1F6A7C9D009B4F60 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8FA1F6A7C9D009B4F60 /* JsonParser.swift */; };
+		8C90D8FD1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8FC1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift */; };
 		8CBE9F3E1F63E8CC00F3A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F3D1F63E8CC00F3A444 /* AppDelegate.swift */; };
 		8CBE9F401F63E8CC00F3A444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */; };
 		8CBE9F431F63E8CC00F3A444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBE9F411F63E8CC00F3A444 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		8C90D8F31F697B2A009B4F60 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8C90D8F51F698978009B4F60 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorNSOp.swift; sourceTree = "<group>"; };
+		8C90D8FA1F6A7C9D009B4F60 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		8C90D8FC1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorNSURLSession.swift; sourceTree = "<group>"; };
 		8CBE9F3A1F63E8CC00F3A444 /* MadridShops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadridShops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBE9F3D1F63E8CC00F3A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				8C90D8E41F6950C2009B4F60 /* DownloadAllShopsInteractor.swift */,
 				8C90D8EA1F695FCA009B4F60 /* DownloadAllShopsInteractorFakeImpl.swift */,
 				8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */,
+				8C90D8FC1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -109,6 +114,14 @@
 				87416664DC0F20FEB06D6B44 /* Pods_MadridShopsTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C90D8F91F6A7C83009B4F60 /* JSON Parser */ = {
+			isa = PBXGroup;
+			children = (
+				8C90D8FA1F6A7C9D009B4F60 /* JsonParser.swift */,
+			);
+			path = "JSON Parser";
 			sourceTree = "<group>";
 		};
 		8CBE9F311F63E8CC00F3A444 = {
@@ -178,6 +191,7 @@
 		8CBE9F5F1F63EACA00F3A444 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8C90D8F91F6A7C83009B4F60 /* JSON Parser */,
 				8C90D8E31F694FD3009B4F60 /* Interactors */,
 				8CBE9F611F63ECFD00F3A444 /* Shop.swift */,
 				8CBE9F631F63F1F700F3A444 /* Shops.swift */,
@@ -425,8 +439,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C90D8FD1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift in Sources */,
 				8C90D8F81F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift in Sources */,
 				8CBE9F621F63ECFD00F3A444 /* Shop.swift in Sources */,
+				8C90D8FB1F6A7C9D009B4F60 /* JsonParser.swift in Sources */,
 				8C90D8F21F69726A009B4F60 /* ShopCell.swift in Sources */,
 				8CBE9F401F63E8CC00F3A444 /* ViewController.swift in Sources */,
 				8CBE9F3E1F63E8CC00F3A444 /* AppDelegate.swift in Sources */,
