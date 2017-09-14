@@ -19,6 +19,8 @@
 		8C90D8F81F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */; };
 		8C90D8FB1F6A7C9D009B4F60 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8FA1F6A7C9D009B4F60 /* JsonParser.swift */; };
 		8C90D8FD1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8FC1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift */; };
+		8C90D8FF1F6A8CB2009B4F60 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8FE1F6A8CB2009B4F60 /* ShopDetailViewController.swift */; };
+		8C90D9021F6A9574009B4F60 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D9011F6A9574009B4F60 /* String+Image.swift */; };
 		8CBE9F3E1F63E8CC00F3A444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F3D1F63E8CC00F3A444 /* AppDelegate.swift */; };
 		8CBE9F401F63E8CC00F3A444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */; };
 		8CBE9F431F63E8CC00F3A444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBE9F411F63E8CC00F3A444 /* Main.storyboard */; };
@@ -57,6 +59,8 @@
 		8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorNSOp.swift; sourceTree = "<group>"; };
 		8C90D8FA1F6A7C9D009B4F60 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		8C90D8FC1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorNSURLSession.swift; sourceTree = "<group>"; };
+		8C90D8FE1F6A8CB2009B4F60 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
+		8C90D9011F6A9574009B4F60 /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 		8CBE9F3A1F63E8CC00F3A444 /* MadridShops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadridShops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBE9F3D1F63E8CC00F3A444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 			path = "JSON Parser";
 			sourceTree = "<group>";
 		};
+		8C90D9001F6A9542009B4F60 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8C90D9011F6A9574009B4F60 /* String+Image.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8CBE9F311F63E8CC00F3A444 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				8CBE9F3D1F63E8CC00F3A444 /* AppDelegate.swift */,
+				8C90D9001F6A9542009B4F60 /* Utils */,
 				8CBE9F601F63EAF700F3A444 /* Assets */,
 				8CBE9F5F1F63EACA00F3A444 /* Model */,
 				8CBE9F5E1F63EAC500F3A444 /* View */,
@@ -174,6 +187,7 @@
 				8CBE9F3F1F63E8CC00F3A444 /* ViewController.swift */,
 				8C90D8EF1F696EB1009B4F60 /* ViewController+CollectionViewController.swift */,
 				8C90D8F51F698978009B4F60 /* MainViewController.swift */,
+				8C90D8FE1F6A8CB2009B4F60 /* ShopDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -450,8 +464,10 @@
 				8CBE9F641F63F1F700F3A444 /* Shops.swift in Sources */,
 				8C90D8F01F696EB1009B4F60 /* ViewController+CollectionViewController.swift in Sources */,
 				8C90D8E91F695F6F009B4F60 /* Typealias.swift in Sources */,
+				8C90D8FF1F6A8CB2009B4F60 /* ShopDetailViewController.swift in Sources */,
 				8C90D8E51F6950C2009B4F60 /* DownloadAllShopsInteractor.swift in Sources */,
 				8C90D8F61F698978009B4F60 /* MainViewController.swift in Sources */,
+				8C90D9021F6A9574009B4F60 /* String+Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

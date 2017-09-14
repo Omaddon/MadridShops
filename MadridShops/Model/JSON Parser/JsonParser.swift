@@ -20,7 +20,6 @@ func parseShops(data: Data) -> Shops {
         for shopJson in result {
             let shop = Shop(name: shopJson["name"]! as! String)
             shop.adress = shopJson["address"]! as! String
-            shop.name = shopJson["name"] as! String
             shop.description = shopJson["description_es"] as! String
             shop.image = shopJson["img"] as! String
             shop.logo = shopJson["logo_img"] as! String

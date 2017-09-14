@@ -36,5 +36,26 @@ class ViewController: UIViewController {
             self.shopsCollectionView.dataSource = self
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let shop = self.shops?.get(index: indexPath.row)
+        
+        self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shop)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowShopDetailSegue" {
+            let vc = segue.destination as! ShopDetailViewController
+            
+            // Podemos sacar la Shop del sender porque con el didSelectItemAt se lo mandamos
+            // Si NO usamos el Segue de "Todo el View Controller", ie, si lo hacemos a mano,
+            // tendríamos que seguir usando el vc.shop = shop pues no la tendríamos en el sender.
+
+            //let indexpath = shopsCollectionView.indexPathsForSelectedItems![0]
+            //let shop = self.shops?.get(index: indexpath.row)
+            //vc.shop = shop
+            vc.shop = sender as! Shop
+        }
+    }
 }
 
