@@ -27,7 +27,24 @@ extension String {
     
     // NSURLSession tiene cache, por lo que es mejor en nuestro caso.
     func loadImageNSURLSession(into imageView: UIImageView) {
+        let session = URLSession.shared
         
+        if let url = URL(string: self) {
+            let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+                
+                if error == nil,
+                    let image = UIImage(data: data!) {
+                    
+                    OperationQueue.main.addOperation {
+                        imageView.image = image
+                    }
+                } else {
+                    print("Error download image.")
+                }
+                
+            })
+            task.resume()
+        }
     }
 }
 

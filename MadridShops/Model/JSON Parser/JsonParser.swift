@@ -30,7 +30,7 @@ func parseShops(data: Data) -> Shops {
             shops.add(shop: shop)
         }
     } catch {
-        print("Error parsing JSON")
+        print("Error parsing JSON.")
     }
     
     return shops
