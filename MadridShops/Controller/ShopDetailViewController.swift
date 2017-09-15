@@ -24,5 +24,5 @@ class ShopDetailViewController: UIViewController {
         self.title = self.shop.name
         self.shopDetailDescription.text = self.shop.description
         self.shop.image.loadImageNSURLSession(into: shopImage)
-    }
+    }    
 }

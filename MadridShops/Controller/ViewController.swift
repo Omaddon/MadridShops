@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     var shops: Shops?
+    var context: NSManagedObjectContext!
     
     @IBOutlet weak var shopsCollectionView: UICollectionView!
     
@@ -19,21 +21,20 @@ class ViewController: UIViewController {
         
         // Elegimos el interactor que queramos usar (el fake, NSOp, NSURLSession, etc)
         let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSession()
-        /*
-        downloadShopsInteractor.execute(onSuccess: { (shops: Shops) in
-            // OK
-        }) { (error: Error) in
-            // ERROR
-        }
-         */
-        
-        // O podemos escribirlo así
+
         downloadShopsInteractor.execute { (shops: Shops) in
             //print("Name: " + shops.get(index: 0).name)
             self.shops = shops
             
             self.shopsCollectionView.delegate = self
             self.shopsCollectionView.dataSource = self
+            
+            let cacheInteractor = SaveAllShopsInteractorImpl()
+            cacheInteractor.execute(shops: shops,
+                                    context: self.context,
+                                    onSuccess: { (shops: Shops) in
+                                        
+            })
         }
     }
     
