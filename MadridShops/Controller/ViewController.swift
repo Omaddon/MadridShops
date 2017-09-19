@@ -11,7 +11,6 @@ import CoreData
 
 class ViewController: UIViewController {
 
-    var shops: Shops?
     var context: NSManagedObjectContext!
     
     @IBOutlet weak var shopsCollectionView: UICollectionView!
@@ -19,27 +18,48 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ExecuteOnceInteractorImpl().execute {
+            initializeData()
+        }
+        
+        // Debemos esperar a que termine de cargar los datos para preguntar
+        // por los datos, pues usamos CoreData para la la CollectionView
+        self.shopsCollectionView.delegate = self
+        self.shopsCollectionView.dataSource = self
+    }
+    
+    
+    func initializeData() {
         // Elegimos el interactor que queramos usar (el fake, NSOp, NSURLSession, etc)
         let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSession()
-
+        
         downloadShopsInteractor.execute { (shops: Shops) in
-            //print("Name: " + shops.get(index: 0).name)
-            self.shops = shops
-            
-            self.shopsCollectionView.delegate = self
-            self.shopsCollectionView.dataSource = self
             
             let cacheInteractor = SaveAllShopsInteractorImpl()
             cacheInteractor.execute(shops: shops,
                                     context: self.context,
                                     onSuccess: { (shops: Shops) in
-                                        
+                // Ha terminado de bajar los datos y mapearlos a nuesta DB
+                // Lo marcamos en las UserDefaults para no volver a bajarlo
+                SetExecutedOnceInteractorImp().execute()
+                
+                // Como esto se hace en otro hilo, la primera vez que se bajan los datos
+                // se establece el delegate y el dataSource antes de tener datos (line 28)
+                // Para solucionarlo, reasignamos el delegate y el dataSource y forzamos
+                // la regarca de los datos de la CollectionView.
+                // Invalidamos el _fetchedResultsController para indicarle que tiene que
+                // que volver a hacer un request a la DB tras guardar los datos.
+                self._fetchedResultsController = nil
+                self.shopsCollectionView.delegate = self
+                self.shopsCollectionView.dataSource = self
+                self.shopsCollectionView.reloadData()
             })
         }
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let shop = self.shops?.get(index: indexPath.row)
+        let shop: ShopCD = self.fetchedResultsController.object(at: indexPath)
         
         self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shop)
     }
@@ -55,7 +75,8 @@ class ViewController: UIViewController {
             //let indexpath = shopsCollectionView.indexPathsForSelectedItems![0]
             //let shop = self.shops?.get(index: indexpath.row)
             //vc.shop = shop
-            vc.shop = sender as! Shop
+            let shopCD: ShopCD = sender as! ShopCD
+            vc.shop = mapShopCDIntoShop(shopCD: shopCD)
         }
     }
     
@@ -75,7 +96,7 @@ class ViewController: UIViewController {
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         

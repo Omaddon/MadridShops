@@ -35,6 +35,10 @@
 		8CBE9F641F63F1F700F3A444 /* Shops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F631F63F1F700F3A444 /* Shops.swift */; };
 		8CBE9F681F63FDEC00F3A444 /* ShopsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE9F671F63FDEC00F3A444 /* ShopsTests.swift */; };
 		8CCCF21D1F712E920056B214 /* MapShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCF21C1F712E920056B214 /* MapShops.swift */; };
+		8CCCF21F1F713EFE0056B214 /* ExecuteOnceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCF21E1F713EFE0056B214 /* ExecuteOnceInteractor.swift */; };
+		8CCCF2211F713F9A0056B214 /* SetExecutedOnceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCF2201F713F9A0056B214 /* SetExecutedOnceInteractor.swift */; };
+		8CCCF2231F7155820056B214 /* SetExecutedOnceInteractorImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCF2221F7155820056B214 /* SetExecutedOnceInteractorImp.swift */; };
+		8CCCF2251F7156790056B214 /* ExecuteOnceInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCF2241F7156790056B214 /* ExecuteOnceInteractorImpl.swift */; };
 		92F088A06EA5AFAE8D863CF9 /* Pods_MadridShopsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87416664DC0F20FEB06D6B44 /* Pods_MadridShopsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +90,10 @@
 		8CBE9F661F63FDEC00F3A444 /* MadridShopsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MadridShopsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CBE9F671F63FDEC00F3A444 /* ShopsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsTests.swift; sourceTree = "<group>"; };
 		8CCCF21C1F712E920056B214 /* MapShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShops.swift; sourceTree = "<group>"; };
+		8CCCF21E1F713EFE0056B214 /* ExecuteOnceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteOnceInteractor.swift; sourceTree = "<group>"; };
+		8CCCF2201F713F9A0056B214 /* SetExecutedOnceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExecutedOnceInteractor.swift; sourceTree = "<group>"; };
+		8CCCF2221F7155820056B214 /* SetExecutedOnceInteractorImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExecutedOnceInteractorImp.swift; sourceTree = "<group>"; };
+		8CCCF2241F7156790056B214 /* ExecuteOnceInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteOnceInteractorImpl.swift; sourceTree = "<group>"; };
 		BE9F187868A0CD5290981AD9 /* Pods-MadridShopsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadridShopsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MadridShopsTests/Pods-MadridShopsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +137,10 @@
 				8C90D8EA1F695FCA009B4F60 /* DownloadAllShopsInteractorFakeImpl.swift */,
 				8C90D8F71F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift */,
 				8C90D8FC1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift */,
+				8CCCF21E1F713EFE0056B214 /* ExecuteOnceInteractor.swift */,
+				8CCCF2241F7156790056B214 /* ExecuteOnceInteractorImpl.swift */,
+				8CCCF2201F713F9A0056B214 /* SetExecutedOnceInteractor.swift */,
+				8CCCF2221F7155820056B214 /* SetExecutedOnceInteractorImp.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -493,13 +505,17 @@
 				8CBE9F621F63ECFD00F3A444 /* Shop.swift in Sources */,
 				8C04C95C1F6C429300413A55 /* SaveAllShopsInteractor.swift in Sources */,
 				8C90D8FB1F6A7C9D009B4F60 /* JsonParser.swift in Sources */,
+				8CCCF21F1F713EFE0056B214 /* ExecuteOnceInteractor.swift in Sources */,
 				8C90D8F21F69726A009B4F60 /* ShopCell.swift in Sources */,
 				8C04C95E1F6C437000413A55 /* SaveAllShopsInteractorImpl.swift in Sources */,
+				8CCCF2211F713F9A0056B214 /* SetExecutedOnceInteractor.swift in Sources */,
 				8CBE9F401F63E8CC00F3A444 /* ViewController.swift in Sources */,
 				8CCCF21D1F712E920056B214 /* MapShops.swift in Sources */,
 				8CBE9F3E1F63E8CC00F3A444 /* AppDelegate.swift in Sources */,
 				8C90D8EB1F695FCA009B4F60 /* DownloadAllShopsInteractorFakeImpl.swift in Sources */,
 				8CBE9F641F63F1F700F3A444 /* Shops.swift in Sources */,
+				8CCCF2231F7155820056B214 /* SetExecutedOnceInteractorImp.swift in Sources */,
+				8CCCF2251F7156790056B214 /* ExecuteOnceInteractorImpl.swift in Sources */,
 				8C90D8F01F696EB1009B4F60 /* ViewController+CollectionViewController.swift in Sources */,
 				8C90D8E91F695F6F009B4F60 /* Typealias.swift in Sources */,
 				8C90D8FF1F6A8CB2009B4F60 /* ShopDetailViewController.swift in Sources */,

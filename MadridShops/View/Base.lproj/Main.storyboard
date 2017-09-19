@@ -159,7 +159,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-C8-wpT">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-C8-wpT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="301.5"/>
                             </mapView>
                         </subviews>
