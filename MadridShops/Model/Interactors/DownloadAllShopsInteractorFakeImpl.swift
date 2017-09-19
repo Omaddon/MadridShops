@@ -19,7 +19,7 @@ class DownloadAllShopsInteractorFakeImpl: DownloadAllShopsInteractor {
         
         for i in 0...10 {
             let shop = Shop(name: "Shop number \(i)")
-            shop.adress = "Adress \(i)"
+            shop.address = "Adress \(i)"
             
             shops.add(shop: shop)
         }

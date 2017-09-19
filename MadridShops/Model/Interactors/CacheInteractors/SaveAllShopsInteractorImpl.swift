@@ -27,16 +27,7 @@ class SaveAllShopsInteractorImpl: SaveAllShopsInteractor {
         for i in 0 ..< shops.count() {
             let shop = shops.get(index: i)
             
-            // mapping Shop into ShopCD
-            let shopCD = ShopCD(context: context)
-            shopCD.name = shop.name
-            shopCD.address = shop.adress
-            shopCD.description_es = shop.description
-            shopCD.image = shop.image
-            shopCD.logo = shop.logo
-            // shopCD.latitude = shop.latitude!
-            // shopCD.longitude = shop.longitude!
-            shopCD.openingHours = shop.openingHours
+            let _ = mapShopIntoShopCD(context: context, shop: shop)
         }
         
         do {

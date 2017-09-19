@@ -16,7 +16,7 @@ public class Shop {
     var image:          String = ""
     var logo:           String = ""
     var openingHours:   String = ""
-    var adress:         String = ""
+    var address:         String = ""
     
     public init(name: String) {
         self.name = name
