@@ -8,15 +8,23 @@
 
 import UIKit
 import CoreData
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     var context: NSManagedObjectContext!
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var shopsCollectionView: UICollectionView!
+    @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
         
         ExecuteOnceInteractorImpl().execute {
             initializeData()
@@ -26,6 +34,15 @@ class ViewController: UIViewController {
         // por los datos, pues usamos CoreData para la la CollectionView
         self.shopsCollectionView.delegate = self
         self.shopsCollectionView.dataSource = self
+        
+        
+        let madridLocation = CLLocation(latitude: 40.41889,
+                                         longitude: -3.69194)
+        //self.map.setCenter(madridLocation.coordinate, animated: true)
+        
+        let region = MKCoordinateRegion(center: madridLocation.coordinate,
+                                        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+        self.map.setRegion(region, animated: true)
     }
     
     
@@ -44,7 +61,7 @@ class ViewController: UIViewController {
                 SetExecutedOnceInteractorImp().execute()
                 
                 // Como esto se hace en otro hilo, la primera vez que se bajan los datos
-                // se establece el delegate y el dataSource antes de tener datos (line 28)
+                // se establece el delegate y el dataSource antes de tener datos (line 33)
                 // Para solucionarlo, reasignamos el delegate y el dataSource y forzamos
                 // la regarca de los datos de la CollectionView.
                 // Invalidamos el _fetchedResultsController para indicarle que tiene que
@@ -120,6 +137,14 @@ class ViewController: UIViewController {
         }
         
         return _fetchedResultsController!
+    }
+    
+    
+    // MARK: - CLLocationManagerDelegate
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        self.map.setCenter(location.coordinate, animated: true)
     }
     
 }
