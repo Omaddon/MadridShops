@@ -13,11 +13,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return fetchedResultsController.sections?.count ?? 0
     }
     
+    
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultsController.sections![section]
         return sectionInfo.numberOfObjects
     }
+    
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -32,3 +34,25 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

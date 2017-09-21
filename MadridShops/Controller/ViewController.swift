@@ -11,7 +11,7 @@ import CoreData
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
@@ -25,6 +25,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
+        
+        self.map.delegate = self
         
         ExecuteOnceInteractorImpl().execute {
             initializeData()
@@ -41,7 +43,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         //self.map.setCenter(madridLocation.coordinate, animated: true)
         
         let region = MKCoordinateRegion(center: madridLocation.coordinate,
-                                        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+                                        span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
         self.map.setRegion(region, animated: true)
     }
     
@@ -51,7 +53,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSession()
         
         downloadShopsInteractor.execute { (shops: Shops) in
-            
+
             let cacheInteractor = SaveAllShopsInteractorImpl()
             cacheInteractor.execute(shops: shops,
                                     context: self.context,
@@ -73,7 +75,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             })
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let shop: ShopCD = self.fetchedResultsController.object(at: indexPath)
@@ -147,5 +148,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.map.setCenter(location.coordinate, animated: true)
     }
     
+    
+    func loadAnnotation(_ shopCD: ShopCD) {
+        let shopLocation = CLLocation(latitude: CLLocationDegrees(shopCD.latitude),
+                                      longitude: CLLocationDegrees(shopCD.longitude))
+        
+        let annotation = Annotation(coordinate: shopLocation.coordinate,
+                                    title: shopCD.name,
+                                    subtitle: shopCD.openingHours)
+        
+        self.map.addAnnotation(annotation)
+    }
+    
+    
+    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        if let shops = self.fetchedResultsController.fetchedObjects {
+            for shopCD in shops {
+                loadAnnotation(shopCD)
+            }
+        }
+    }
 }
 

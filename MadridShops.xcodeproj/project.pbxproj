@@ -13,6 +13,7 @@
 		8C04C9591F6C33A300413A55 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C9581F6C33A300413A55 /* CoreDataStack.swift */; };
 		8C04C95C1F6C429300413A55 /* SaveAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C95B1F6C429300413A55 /* SaveAllShopsInteractor.swift */; };
 		8C04C95E1F6C437000413A55 /* SaveAllShopsInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C95D1F6C437000413A55 /* SaveAllShopsInteractorImpl.swift */; };
+		8C21A2451F72E49B00A9FF11 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21A2441F72E49B00A9FF11 /* Annotation.swift */; };
 		8C90D8E51F6950C2009B4F60 /* DownloadAllShopsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8E41F6950C2009B4F60 /* DownloadAllShopsInteractor.swift */; };
 		8C90D8E91F695F6F009B4F60 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8E81F695F6F009B4F60 /* Typealias.swift */; };
 		8C90D8EB1F695FCA009B4F60 /* DownloadAllShopsInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C90D8EA1F695FCA009B4F60 /* DownloadAllShopsInteractorFakeImpl.swift */; };
@@ -63,6 +64,7 @@
 		8C04C9581F6C33A300413A55 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8C04C95B1F6C429300413A55 /* SaveAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractor.swift; sourceTree = "<group>"; };
 		8C04C95D1F6C437000413A55 /* SaveAllShopsInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllShopsInteractorImpl.swift; sourceTree = "<group>"; };
+		8C21A2441F72E49B00A9FF11 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		8C90D8E41F6950C2009B4F60 /* DownloadAllShopsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractor.swift; sourceTree = "<group>"; };
 		8C90D8E81F695F6F009B4F60 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		8C90D8EA1F695FCA009B4F60 /* DownloadAllShopsInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAllShopsInteractorFakeImpl.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				8C90D8E31F694FD3009B4F60 /* Interactors */,
 				8CBE9F611F63ECFD00F3A444 /* Shop.swift */,
 				8CBE9F631F63F1F700F3A444 /* Shops.swift */,
+				8C21A2441F72E49B00A9FF11 /* Annotation.swift */,
 				8C04C9551F6C31D800413A55 /* MadridShops.xcdatamodeld */,
 			);
 			path = Model;
@@ -501,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C90D8FD1F6A7F80009B4F60 /* DownloadAllShopsInteractorNSURLSession.swift in Sources */,
+				8C21A2451F72E49B00A9FF11 /* Annotation.swift in Sources */,
 				8C90D8F81F69A500009B4F60 /* DownloadAllShopsInteractorNSOp.swift in Sources */,
 				8CBE9F621F63ECFD00F3A444 /* Shop.swift in Sources */,
 				8C04C95C1F6C429300413A55 /* SaveAllShopsInteractor.swift in Sources */,
